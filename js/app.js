@@ -4,12 +4,6 @@ function getItRight (bandName) {
     return bandName.replace(/(^a |an |the )/i, '').trim();
 }
 
-const sortedBands = bands.sort(function(a,b) {
-  if (getItRight(a) > getItRight(b)) {
-      return 1;
-  } else {
-      return -1;
-  }
-});
+const sortedBands = bands.sort((a,b) => getItRight(a) > getItRight(b) ? 1 : -1);
 
 console.log(sortedBands);
